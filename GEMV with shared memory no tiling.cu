@@ -12,7 +12,7 @@
 using namespace std;
 
 
-#define N 1024
+#define N 50
 #define BLOCK_SIZE 32
 
 __global__ void matrixVectorMul(double* A, double* x, double* y) {
@@ -89,10 +89,10 @@ int main() {
     cudaMemcpy(y, d_y, N * sizeof(double), cudaMemcpyDeviceToHost);
 
     // Print result
-    printf("The vector is:\n");
+    printf("The result is:\n");
     printf("***************\n");
     for (int i = 0; i < N; ++i) {
-        cout<<y[i];
+        cout<<y[i]<<" ";
     }
     printf("\n");
 
